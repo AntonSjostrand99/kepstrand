@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-custom-black border-b-8 border-custom-yellow sm:p-6 md:p-5 lg:p-10 p-4 sticky top-0 z-50">
+    <nav className="bg-custom-black border-b-4 border-custom-yellow sm:p-6 md:p-5 lg:p-10 p-4 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Länkar - dolda på mindre skärmar */}
         <div className="hidden lg:flex items-center space-x-4">
@@ -93,13 +93,13 @@ const Navbar = () => {
 
       {/* Dropdown-meny för mindre skärmar */}
       {isOpen && (
-        <div className="lg:hidden mt-2">
-          <div className="block px-2 pt-2 pb-4 space-y-1">
-            <Link href={'/'} className="text-white block hover:text-gray-300">Hem</Link>
-            <Link href={'/shop'} className="text-white block hover:text-gray-300">Produkter</Link>
-            <Link href={'/contact'} className="text-white block hover:text-gray-300">Kontakt</Link>
-            <Link href={'/cart'} className="text-white block hover:text-gray-300">Kassa</Link>
-            <Link href={'/login'} className="text-white block hover:text-gray-300">Inloggning</Link>
+        <div className="lg:hidden mt-2 bg-custom-yellow">
+          <div className="block px-2 pt-2 pb-4 space-y-1 ">
+            <Link href={'/'} className=" text-custom-black block hover:bg-white border-4 border-black rounded-lg">Hem</Link>
+            <Link href={'/shop'} className="text-custom-black block hover:bg-white border-4 border-black rounded-lg">Produkter</Link>
+            <Link href={'/contact'} className="text-custom-black block hover:bg-white border-4 border-black rounded-lg">Kontakt</Link>
+            {/* <Link href={'/cart'} className="text-white block hover:text-gray-300">Kassa</Link>
+            <Link href={'/login'} className="text-white block hover:text-gray-300">Inloggning</Link> */}
           </div>
         </div>
       )}

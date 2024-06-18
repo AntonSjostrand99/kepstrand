@@ -7,7 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 border-t-2 text-white py-8 ">
+    <footer className="bg-custom-black border-t-4 border-custom-yellow text-white py-8 ">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
         {/* Sektion 1: Kontakt */}
         <div className="w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">
