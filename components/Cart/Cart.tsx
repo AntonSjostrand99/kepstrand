@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Cart = () => {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
@@ -17,7 +18,7 @@ const Cart = () => {
     <div className="relative">
       {/* Kundvagnsikonen med länk */}
       <div  className="text-white hover:text-gray-300 cursor-pointer" title="Kundvagn">
-    
+      <ShoppingBasketIcon onClick={openSideNav} />
       </div>
 
       {/* Sidenav */}
@@ -31,7 +32,7 @@ const Cart = () => {
                 onClick={closeSideNav}
                 aria-label="Close"
               >
-               X
+                <CloseIcon />
               </button>
             </div>
             <div className="mt-4">

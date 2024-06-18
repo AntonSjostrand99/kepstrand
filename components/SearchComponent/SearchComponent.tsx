@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import SearchIcon from '@mui/icons-material/Search';
 
 const SearchComponent = () => {
   const [showInput, setShowInput] = useState(false);
@@ -10,7 +10,7 @@ const SearchComponent = () => {
 
   return (
     <div className="flex items-center">
-    
+      <SearchIcon className="text-white hover:text-gray-300 cursor-pointer" onClick={handleIconClick} />
       {showInput && (
         <input
           type="text"

@@ -3,7 +3,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Image from "next/image";
-
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
 import SearchComponent from '../SearchComponent/SearchComponent';
 import Cart from '../Cart/Cart';
 
@@ -22,7 +25,7 @@ const Navbar = () => {
 
           <div className="relative group">
             <Link href="/shop" className="text-white hover:text-gray-300 flex items-center" title="Produkter">
-              
+              <InventoryIcon />
             </Link>
             <div className="absolute left-0 mt-2 w-56 bg-white border-4 border-black rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
               <Link href="/shop" className="block px-4 py-2 text-gray-800 hover:bg-yellow-500">Snapbacks</Link>
@@ -30,7 +33,7 @@ const Navbar = () => {
               <Link href="/shop" className="block px-4 py-2 text-gray-800 hover:bg-yellow-500">Trucker Hats</Link>
             </div>
           </div>
-          <Link href={'/contact'} className="text-white hover:text-gray-300" title="Kontakt">Kontakt</Link>
+          <Link href={'/contact'} className="text-white hover:text-gray-300" title="Kontakt"><ContactPageIcon /></Link>
 
         </div>
 
@@ -51,7 +54,7 @@ const Navbar = () => {
 
           <SearchComponent />
           <Cart />
-          <Link href={'/login'} className="text-white hover:text-gray-300" title="Mina sidor"></Link>
+          <Link href={'/login'} className="text-white hover:text-gray-300" title="Mina sidor"><SentimentSatisfiedAltIcon /></Link>
 
         </div>
 
@@ -59,7 +62,7 @@ const Navbar = () => {
         <div className="flex lg:hidden items-center space-x-4">
           <SearchComponent />
           <Cart />
-          <Link href={'/login'} className="text-white hover:text-gray-300" title="Mina sidor"></Link>
+          <Link href={'/login'} className="text-white hover:text-gray-300" title="Mina sidor"><SentimentSatisfiedAltIcon /></Link>
 
           <button
             className="text-white focus:outline-none"
