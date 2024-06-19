@@ -1,34 +1,33 @@
 "use client"
 
 import React, { useState } from 'react';
-import Select from 'react-select';
+import Select, { SingleValue, ActionMeta } from 'react-select';
 import Card from '@/components/Card/Card';
-
 
 const customStyles = {
   control: (provided: any) => ({
     ...provided,
-    backgroundColor: '#ffffff', // Vit bakgrund
-    borderColor: '#000000', // Svart kant
-    color: '#000000', // Svart text
+    backgroundColor: '#ffffff',
+    borderColor: '#000000',
+    color: '#000000',
     padding: '0.5rem',
-    width: '100%', // Full width for mobile
+    width: '100%',
     '@media(min-width: 640px)': {
-      width: '200px', // Fixed width for larger screens
+      width: '200px',
     },
   }),
   singleValue: (provided: any) => ({
     ...provided,
-    color: '#000000', // Svart text
+    color: '#000000',
   }),
   menu: (provided: any) => ({
     ...provided,
-    backgroundColor: '#ffffff', // Vit bakgrund
+    backgroundColor: '#ffffff',
   }),
   option: (provided: any, state: { isFocused: any; }) => ({
     ...provided,
-    backgroundColor: state.isFocused ? '#fca311' : '#ffffff', // Gul vid hovring
-    color: state.isFocused ? '#000000' : '#000000', // Svart text
+    backgroundColor: state.isFocused ? '#fca311' : '#ffffff',
+    color: state.isFocused ? '#000000' : '#000000',
     ':hover': {
       backgroundColor: '#fca311',
       color: '#000000',
@@ -49,15 +48,20 @@ const optionsColor = [
   { value: 'green', label: 'Grön' },
 ];
 
-const Shop = () => {
-  const [sortOption, setSortOption] = useState(optionsSort[0]);
-  const [selectedColor, setSelectedColor] = useState(optionsColor[0]);
+interface OptionType {
+  value: string;
+  label: string;
+}
 
-  const handleSortChange = (selectedOption: React.SetStateAction<{ value: string; label: string; }>) => {
+const Shop = () => {
+  const [sortOption, setSortOption] = useState<SingleValue<OptionType>>(optionsSort[0]);
+  const [selectedColor, setSelectedColor] = useState<SingleValue<OptionType>>(optionsColor[0]);
+
+  const handleSortChange = (selectedOption: SingleValue<OptionType>, actionMeta: ActionMeta<OptionType>) => {
     setSortOption(selectedOption);
   };
 
-  const handleColorChange = (selectedOption: React.SetStateAction<{ value: string; label: string; }>) => {
+  const handleColorChange = (selectedOption: SingleValue<OptionType>, actionMeta: ActionMeta<OptionType>) => {
     setSelectedColor(selectedOption);
   };
 
@@ -75,11 +79,11 @@ const Shop = () => {
 
   // Filter and sort products
   const filteredProducts = products
-    .filter(product => selectedColor.value === 'all' || product.color === selectedColor.value)
+    .filter(product => selectedColor?.value === 'all' || product.color === selectedColor?.value)
     .sort((a, b) => {
-      if (sortOption.value === 'price-asc') {
+      if (sortOption?.value === 'price-asc') {
         return a.price - b.price;
-      } else if (sortOption.value === 'price-desc') {
+      } else if (sortOption?.value === 'price-desc') {
         return b.price - a.price;
       }
       return 0;
@@ -87,7 +91,6 @@ const Shop = () => {
 
   return (
     <div className='flex-col justify-center items-center'>
-
       <div className="container mx-auto px-4 py-12">
         <div className='flex flex-col justify-center items-center text-white mb-10 gap-4' >
           <h1 className='text-4xl font-bold '>Keps</h1>
@@ -121,7 +124,6 @@ const Shop = () => {
           ))}
         </div>
       </div>
-    
     </div>
   );
 }
