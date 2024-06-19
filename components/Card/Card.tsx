@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 
 
+
 const Card = ({ product }) => {
   return (
     <div className="bg-gray-200 border-4 border-black shadow-md rounded-lg p-4 flex flex-col justify-start gap-4">
