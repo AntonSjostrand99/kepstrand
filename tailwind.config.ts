@@ -1,3 +1,4 @@
+import { Bungee } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -19,6 +20,11 @@ const config: Config = {
         'custom-black': '#000000',
         
       },
+      fontFamily: {
+        Bungee: ['Bungee', 'serif'],
+        AmaticSC: ['Amatic SC', 'sans-serif'],
+    
+       },
     },
   },
   plugins: [],

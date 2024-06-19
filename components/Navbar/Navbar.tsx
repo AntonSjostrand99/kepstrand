@@ -28,9 +28,9 @@ const Navbar = () => {
               <InventoryIcon />
             </Link>
             <div className="absolute left-0 mt-2 w-56 bg-white border-4 border-black rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-              <Link href="/shop" className="block px-4 py-2 text-gray-800 hover:bg-yellow-500">Snapbacks</Link>
-              <Link href="/shop" className="block px-4 py-2 text-gray-800 hover:bg-yellow-500">Beanies</Link>
-              <Link href="/shop" className="block px-4 py-2 text-gray-800 hover:bg-yellow-500">Trucker Hats</Link>
+              <Link href="/shop" className="block px-4 py-2 text-gray-800 hover:bg-yellow-500 font-Bungee">Snapbacks</Link>
+              <Link href="/shop" className="block px-4 py-2 text-gray-800 hover:bg-yellow-500 font-Bungee">Beanies</Link>
+              <Link href="/shop" className="block px-4 py-2 text-gray-800 hover:bg-yellow-500 font-Bungee">Trucker Hats</Link>
             </div>
           </div>
           <Link href={'/contact'} className="text-white hover:text-gray-300" title="Kontakt"><ContactPageIcon /></Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
         <div className="flex lg:hidden items-center space-x-4">
           <SearchComponent />
           <Cart />
-          <Link href={'/login'} className="text-white hover:text-gray-300" title="Mina sidor"><SentimentSatisfiedAltIcon /></Link>
+          <Link href={'/login'} className="text-white hover:text-gray-300" title="Mina sidor "><SentimentSatisfiedAltIcon /></Link>
 
           <button
             className="text-white focus:outline-none"
@@ -95,9 +95,9 @@ const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden mt-2 bg-custom-yellow">
           <div className="block px-2 pt-2 pb-4 space-y-1 ">
-            <Link href={'/'} className=" text-custom-black block hover:bg-white border-4 border-black rounded-lg">Hem</Link>
-            <Link href={'/shop'} className="text-custom-black block hover:bg-white border-4 border-black rounded-lg">Produkter</Link>
-            <Link href={'/contact'} className="text-custom-black block hover:bg-white border-4 border-black rounded-lg">Kontakt</Link>
+            <Link href={'/'} className=" text-custom-black block hover:bg-white border-4 border-black rounded-lg font-Bungee">Hem</Link>
+            <Link href={'/shop'} className="text-custom-black block hover:bg-white border-4 border-black rounded-lg font-Bungee">Produkter</Link>
+            <Link href={'/contact'} className="text-custom-black block hover:bg-white border-4 border-black rounded-lg font-Bungee">Kontakt</Link>
             {/* <Link href={'/cart'} className="text-white block hover:text-gray-300">Kassa</Link>
             <Link href={'/login'} className="text-white block hover:text-gray-300">Inloggning</Link> */}
           </div>

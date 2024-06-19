@@ -16,7 +16,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ product }) => {
   return (
-    <div className="bg-gray-200 border-4 border-black shadow-md rounded-lg p-4 flex flex-col justify-start gap-4">
+    <div className="bg-gray-200 border-4 border-black shadow-md rounded-lg p-4 flex flex-col justify-start gap-4 font-Bungee">
       <div className="flex justify-center">
         <Image
           className="object-cover rounded-t-lg border border-black"

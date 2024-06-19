@@ -89,8 +89,8 @@ const Shop = () => {
     <div className='flex-col justify-center items-center'>
       <div className="container mx-auto px-4 py-12">
         <div className='flex flex-col justify-center items-center text-white mb-10 gap-4' >
-          <h1 className='text-4xl font-bold '>Keps</h1>
-          <p className='md:w-[60%] w-[90%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam obcaecati maiores similique, dolores quisquam labore cum sed fugiat ipsum consequuntur quasi </p>
+          <h1 className='text-4xl font-bold font-Bungee'>Keps</h1>
+          <p className='md:w-[60%] w-[90%] '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam obcaecati maiores similique, dolores quisquam labore cum sed fugiat ipsum consequuntur quasi </p>
         </div>
 
         <div className="mb-4 flex flex-col sm:flex-row justify-start items-center gap-3 rounded p-1 bg-custom-yellow border-4 border-custom-black">
@@ -116,17 +116,15 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-14">
           {filteredProducts.map((product) => (
             <Card key={product.id} product={product} />
           ))}
         </div>
+        <WhyChooseUs/>
       </div>
 
-      <WhyChooseUs/>
-   
-
-
+  
     </div>
   );
 }

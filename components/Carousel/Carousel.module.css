@@ -1,3 +1,6 @@
+/* Carousel.module.css */
+
+/* Anpassade stilar för slick-prev och slick-next */
 .slick-prev,
 .slick-next {
   position: absolute;

@@ -12,7 +12,7 @@ const WhyChooseUs = () => {
       <div className="w-full">
 <DividerWithText text={'Varför välja oss'} />
         <div className="lg:text-center sm:[90%] w-full">
-          <p className="mt-4 max-w-2xl text-2xl text-white lg:mx-auto">
+          <p className="mt-4 max-w-2xl md:text-3xl text-xl text-white font-bold lg:mx-auto font-AmaticSC">
             Vi strävar efter att erbjuda den bästa shoppingupplevelsen med följande fördelar:
           </p>
         </div>
@@ -24,10 +24,10 @@ const WhyChooseUs = () => {
               <LocalShippingIcon  className=' text-custom-yellow sm:h-14 sm:w-14 h-10 w-10'/>
               </div>
               <div className="mt-4 text-center">
-                <h3 className="text-lg font-medium text-black">
+                <h3 className="text-lg font-medium text-black font-Bungee">
                   Snabb leverans
                 </h3>
-                <p className="mt-2 text-base text-white ">
+                <p className="mt-2 text-lg text-white font-AmaticSC font-bold">
                   Vi levererar dina produkter så snabbt som möjligt.
                 </p>
               </div>
@@ -38,10 +38,10 @@ const WhyChooseUs = () => {
               <ReplayIcon  className=' text-custom-yellow sm:h-14 sm:w-14 h-10 w-10'/>
               </div>
               <div className="mt-4 text-center">
-                <h3 className="text-lg font-medium text-black">
+                <h3 className="text-lg font-medium text-black font-Bungee">
                   Enkel retur
                 </h3>
-                <p className="mt-2 text-base text-white">
+                <p className="mt-2 text-lg text-white font-AmaticSC font-bold">
                   Du kan returnera produkter utan krångel.
                 </p>
               </div>
@@ -52,10 +52,10 @@ const WhyChooseUs = () => {
               <EmailIcon  className=' text-custom-yellow sm:h-14 sm:w-14 h-10 w-10'/>
               </div>
               <div className="mt-4 text-center">
-                <h3 className="text-lg font-medium text-black">
+                <h3 className="text-lg font-medium text-black font-Bungee">
                   Kundservice dygnet runt
                 </h3>
-                <p className="mt-2 text-base text-white">
+                <p className="mt-2 text-lg text-white font-AmaticSC font-bold">
                   Vi finns här för att hjälpa dig när som helst.
                 </p>
               </div>

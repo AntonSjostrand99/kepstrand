@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
-import styles from './Carousel.module.css'; // Importera CSS-modulen
+import styles from './Carousel.module.css' // Importera CSS-modulen
 
 const Carousel = () => {
   const settings = {
@@ -35,7 +35,7 @@ const Carousel = () => {
   };
 
   return (
-    <Slider {...settings} className="slick-slider">
+    <Slider {...settings} className="slick-slider font-Bungee">
       <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
         <img
           className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
