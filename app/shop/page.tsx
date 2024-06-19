@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Select from 'react-select';
 import Card from '@/components/Card/Card';
+import WhyChooseUs from '@/components/WhyChooseUs/WhyChooseUs';
 
 const customStyles = {
   control: (provided: any) => ({
@@ -89,7 +90,7 @@ const Shop = () => {
       <div className="container mx-auto px-4 py-12">
         <div className='flex flex-col justify-center items-center text-white mb-10 gap-4' >
           <h1 className='text-4xl font-bold '>Keps</h1>
-          <p className='w-[60%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam obcaecati maiores similique, dolores quisquam labore cum sed fugiat ipsum consequuntur quasi </p>
+          <p className='md:w-[60%] w-[90%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam obcaecati maiores similique, dolores quisquam labore cum sed fugiat ipsum consequuntur quasi </p>
         </div>
 
         <div className="mb-4 flex flex-col sm:flex-row justify-start items-center gap-3 rounded p-1 bg-custom-yellow border-4 border-custom-black">
@@ -121,6 +122,11 @@ const Shop = () => {
           ))}
         </div>
       </div>
+
+      <WhyChooseUs/>
+   
+
+
     </div>
   );
 }

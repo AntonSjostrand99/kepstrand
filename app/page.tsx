@@ -15,8 +15,6 @@ import DividerWithText from "@/components/DividerWithText/DividerWithText";
 export default function Home() {
   return (
     <main className="flex-col justify-center items-center ">
-
-
       <div className="relative h-screen bg-cover bg-center " style={{ backgroundImage: 'url(/startimage.jpg)' }}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
@@ -30,23 +28,15 @@ export default function Home() {
           </Link>
         </div>
       </div>
-
       <div className="container mx-auto mt-8 mb-24 ">
         <Category />
-
       </div>
-
-
       <div className="container mx-auto flex-col mt-10 mb-24">
-      <DividerWithText text="Bästsäljare"/>
+        <DividerWithText text="Bästsäljare" />
         <Carousel />
       </div>
-
- 
-
-
       <div className="container mx-auto mt-10 mb-24 ">
-      <DividerWithText text="Inspo"/>
+        <DividerWithText text="Inspo" />
 
         <div className=" flex flex-col lg:flex-row gap-4 ">
           <div className="lg:w-2/4 flex flex-col gap-4">
@@ -84,28 +74,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+      </div>
+      <div className="container mx-auto mt-10 mb-24">
+        <Reviews />
       </div>
 
-
-
-<div className="container mx-auto mt-10 mb-24">
-<Reviews />
-</div>
-
-
-
-<div className="container mx-auto mt-16 mb-24">
-<DividerWithText text="Varför välja oss?"/>
-<WhyChooseUs/>
-</div>
- 
-
- <DividerWithText text="Test"/>
-
-
-
-
+      <WhyChooseUs/>
 
     </main>
   );

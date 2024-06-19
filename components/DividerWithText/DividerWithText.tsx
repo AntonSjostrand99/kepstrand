@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Definiera en interface för props
 interface DividerWithTextProps {
   text: string;
 }
@@ -13,6 +12,8 @@ const DividerWithText: React.FC<DividerWithTextProps> = ({ text }) => {
         {text}
       </span>
     </div>
+
+
   );
 };
 

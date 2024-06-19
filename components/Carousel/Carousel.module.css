@@ -1,0 +1,78 @@
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; /* Se till att knapparna ligger över bilderna */
+  width: 40px; /* Justera bredden efter behov */
+  height: 40px; /* Justera höjden efter behov */
+  background-color: rgba(0, 0, 0, 0.5); /* Justera bakgrundsfärgen efter behov */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.slick-prev {
+  left: 10px; /* Placera vänster pil */
+}
+
+.slick-next {
+  right: 10px; /* Placera höger pil */
+}
+
+/* Stilar för bild och länk */
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.border-4 {
+  border-width: 0.25rem;
+}
+
+.border-black {
+  border-color: #000;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.border-b-4 {
+  border-bottom-width: 0.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.hover\:bg-yellow-500:hover {
+  background-color: #f59e0b;
+}
+
+/* Media query för mobil läge */
+@media (max-width: 600px) {
+  .slick-prev,
+  .slick-next {
+    display: none; /* Dölj knapparna på mobil läge */
+  }
+}

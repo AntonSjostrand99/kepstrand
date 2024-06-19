@@ -4,11 +4,14 @@ import DividerWithText from '../DividerWithText/DividerWithText';
 import ReplayIcon from '@mui/icons-material/Replay';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
+
 const WhyChooseUs = () => {
   return (
-    <section className="py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
+
+    <section className="py-12 container mx-auto">
+      <div className="w-full">
+<DividerWithText text={'Varför välja oss'} />
+        <div className="lg:text-center sm:[90%] w-full">
           <p className="mt-4 max-w-2xl text-2xl text-white lg:mx-auto">
             Vi strävar efter att erbjuda den bästa shoppingupplevelsen med följande fördelar:
           </p>
@@ -58,7 +61,6 @@ const WhyChooseUs = () => {
               </div>
             </div>
 
-            {/* Lägg till fler fördelar här vid behov */}
           </div>
         </div>
       </div>

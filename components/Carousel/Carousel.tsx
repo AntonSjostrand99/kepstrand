@@ -1,12 +1,10 @@
 "use client"
-
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
-import Select from 'react-select';
-
+import styles from './Carousel.module.css'; // Importera CSS-modulen
 
 const Carousel = () => {
   const settings = {
@@ -37,97 +35,70 @@ const Carousel = () => {
   };
 
   return (
-    <Slider {...settings} className="slick-slider ">
-      <div className="rounded-lg border-4 border-black shadow-md bg-white">
-     
-     <img
-       className="w-full h-auto border-b-4 border-black"
-       src="/bestseller.jpg"
-       alt="Slide 1"
-     />
-
-      <div className=''>
-     <Link href="/shop">
-      <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
-      </Link>
-      </div>
-
-
-  
-   </div>
-      <div className="rounded-lg border-4 border-black shadow-md bg-white">
-     
+    <Slider {...settings} className="slick-slider">
+      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
         <img
-          className="w-full h-auto border-b-4 border-black"
+          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
           src="/bestseller.jpg"
           alt="Slide 1"
         />
- 
-         <div className=''>
-        <Link href="/shop">
-         <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
-         </Link>
-         </div>
-   
-
-     
+        <div>
+          <Link href="/shop">
+            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
+          </Link>
+        </div>
       </div>
-      <div className="rounded-lg border-4 border-black shadow-md bg-white">
-     
+      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
         <img
-          className="w-full h-auto border-b-4 border-black"
+          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
           src="/bestseller.jpg"
-          alt="Slide 1"
+          alt="Slide 2"
         />
- 
-         <div className=''>
-        <Link href="/shop">
-         <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
-         </Link>
-         </div>
-   
-
-     
+        <div>
+          <Link href="/shop">
+            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
+          </Link>
+        </div>
       </div>
-      <div className="rounded-lg border-4 border-black shadow-md bg-white">
-     
-     <img
-       className="w-full h-auto border-b-4 border-black"
-       src="/bestseller.jpg"
-       alt="Slide 1"
-     />
-
-      <div className=''>
-     <Link href="/shop">
-      <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
-      </Link>
+      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
+        <img
+          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
+          src="/bestseller.jpg"
+          alt="Slide 3"
+        />
+        <div>
+          <Link href="/shop">
+            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
+          </Link>
+        </div>
       </div>
-
-
-  
-   </div>
-   <div className="rounded-lg border-4 border-black shadow-md bg-white">
-     
-     <img
-       className="w-full h-auto border-b-4 border-black"
-       src="/bestseller.jpg"
-       alt="Slide 1"
-     />
-
-      <div className=''>
-     <Link href="/shop">
-      <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
-      </Link>
+      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
+        <img
+          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
+          src="/bestseller.jpg"
+          alt="Slide 4"
+        />
+        <div>
+          <Link href="/shop">
+            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
+          </Link>
+        </div>
       </div>
-
-
-  
-   </div>
+      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
+        <img
+          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
+          src="/bestseller.jpg"
+          alt="Slide 5"
+        />
+        <div>
+          <Link href="/shop">
+            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
+          </Link>
+        </div>
+      </div>
       {/* Lägg till fler bilder eller innehåll här */}
     </Slider>
   );
 };
 
 export default Carousel;
-
-
