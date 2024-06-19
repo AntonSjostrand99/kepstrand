@@ -1,10 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
 
+interface Product {
+  id: number;
+  name: string;
+  color: string;
+  price: number;
+  description: string;
+  image: string;
+}
 
+interface CardProps {
+  product: Product;
+}
 
-
-const Card = ({ product }) => {
+const Card: React.FC<CardProps> = ({ product }) => {
   return (
     <div className="bg-gray-200 border-4 border-black shadow-md rounded-lg p-4 flex flex-col justify-start gap-4">
       <div className="flex justify-center">

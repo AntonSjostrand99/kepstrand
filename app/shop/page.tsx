@@ -1,33 +1,33 @@
-"use client"
+ "use client"
 
-import React, { useState } from 'react';
-import Select, { SingleValue, ActionMeta } from 'react-select';
+import React, { useState } from 'react'
+import Select from 'react-select';
 import Card from '@/components/Card/Card';
 
 const customStyles = {
   control: (provided: any) => ({
     ...provided,
-    backgroundColor: '#ffffff',
-    borderColor: '#000000',
-    color: '#000000',
+    backgroundColor: '#ffffff', // Vit bakgrund
+    borderColor: '#000000', // Svart kant
+    color: '#000000', // Svart text
     padding: '0.5rem',
-    width: '100%',
+    width: '100%', // Full width for mobile
     '@media(min-width: 640px)': {
-      width: '200px',
+      width: '200px', // Fixed width for larger screens
     },
   }),
   singleValue: (provided: any) => ({
     ...provided,
-    color: '#000000',
+    color: '#000000', // Svart text
   }),
   menu: (provided: any) => ({
     ...provided,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#ffffff', // Vit bakgrund
   }),
   option: (provided: any, state: { isFocused: any; }) => ({
     ...provided,
-    backgroundColor: state.isFocused ? '#fca311' : '#ffffff',
-    color: state.isFocused ? '#000000' : '#000000',
+    backgroundColor: state.isFocused ? '#fca311' : '#ffffff', // Gul vid hovring
+    color: state.isFocused ? '#000000' : '#000000', // Svart text
     ':hover': {
       backgroundColor: '#fca311',
       color: '#000000',
@@ -48,21 +48,16 @@ const optionsColor = [
   { value: 'green', label: 'Grön' },
 ];
 
-interface OptionType {
-  value: string;
-  label: string;
-}
-
 const Shop = () => {
-  const [sortOption, setSortOption] = useState<SingleValue<OptionType>>(optionsSort[0]);
-  const [selectedColor, setSelectedColor] = useState<SingleValue<OptionType>>(optionsColor[0]);
+  const [sortOption, setSortOption] = useState(optionsSort[0]);
+  const [selectedColor, setSelectedColor] = useState(optionsColor[0]);
 
-  const handleSortChange = (selectedOption: SingleValue<OptionType>, actionMeta: ActionMeta<OptionType>) => {
-    setSortOption(selectedOption);
+  const handleSortChange = (newValue: any) => {
+    setSortOption(newValue);
   };
 
-  const handleColorChange = (selectedOption: SingleValue<OptionType>, actionMeta: ActionMeta<OptionType>) => {
-    setSelectedColor(selectedOption);
+  const handleColorChange = (newValue: any) => {
+    setSelectedColor(newValue);
   };
 
   // Dummy data for demonstration purposes
@@ -79,11 +74,11 @@ const Shop = () => {
 
   // Filter and sort products
   const filteredProducts = products
-    .filter(product => selectedColor?.value === 'all' || product.color === selectedColor?.value)
+    .filter(product => selectedColor.value === 'all' || product.color === selectedColor.value)
     .sort((a, b) => {
-      if (sortOption?.value === 'price-asc') {
+      if (sortOption.value === 'price-asc') {
         return a.price - b.price;
-      } else if (sortOption?.value === 'price-desc') {
+      } else if (sortOption.value === 'price-desc') {
         return b.price - a.price;
       }
       return 0;
@@ -101,6 +96,7 @@ const Shop = () => {
           {/* Sort Options */}
           <div className="w-full sm:w-auto mb-3 sm:mb-0 cursor-pointer rounded border-2 border-black ">
             <Select
+              instanceId="sort-select"
               styles={customStyles}
               value={sortOption}
               onChange={handleSortChange}
@@ -110,6 +106,7 @@ const Shop = () => {
           {/* Filter Options */}
           <div className="w-full sm:w-auto mb-3 sm:mb-0 cursor-pointer rounded border-2 border-black">
             <Select
+              instanceId="color-select"
               styles={customStyles}
               value={selectedColor}
               onChange={handleColorChange}
@@ -119,8 +116,8 @@ const Shop = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {filteredProducts.map((product, index) => (
-            <Card key={index} product={product} />
+          {filteredProducts.map((product) => (
+            <Card key={product.id} product={product} />
           ))}
         </div>
       </div>
