@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from 'next/link';
 import Category from "@/components/Category/Category";
-import Carousel from "@/components/Carousel/Carousel";
 import Reviews from "@/components/Reviews/Reviews";
 import WhyChooseUs from "@/components/WhyChooseUs/WhyChooseUs";
 import DividerWithText from "@/components/DividerWithText/DividerWithText";
+import Carousel from "@/components/Carousel/Carousel";
 
 
 
@@ -35,6 +35,14 @@ export default function Home() {
         <DividerWithText text="Bästsäljare" />
         <Carousel />
       </div>
+
+     
+
+
+      
+
+
+
       <div className="container mx-auto mt-10 mb-24 ">
         <DividerWithText text="Inspo" />
 

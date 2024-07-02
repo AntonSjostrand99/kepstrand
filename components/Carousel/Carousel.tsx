@@ -1,104 +1,150 @@
 "use client"
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Link from 'next/link';
-import styles from './Carousel.module.css' // Importera CSS-modulen
 
-const Carousel = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-        },
-      },
-    ],
-  };
+import React, { useState, useEffect, useRef } from 'react';
+import AliceCarousel, { Link } from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import Image from 'next/image';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-  return (
-    <Slider {...settings} className="slick-slider font-Bungee">
-      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
-        <img
-          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
-          src="/bestseller.jpg"
-          alt="Slide 1"
-        />
-        <div>
-          <Link href="/shop">
-            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
-          </Link>
+
+const items = [
+    <div key="1" className="w-full h-full pr-2 font-Bungee">
+        <div className="rounded-lg border-4 border-black shadow-md bg-white">
+            <img
+                className="w-full h-auto border-b-4 border-black"
+                src="/bestseller.jpg"
+                alt="Slide 1"
+            />
+            <div className=''>
+                <Link href="/shop">
+                    <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
+                </Link>
+            </div>
         </div>
-      </div>
-      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
-        <img
-          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
-          src="/bestseller.jpg"
-          alt="Slide 2"
-        />
-        <div>
-          <Link href="/shop">
-            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
-          </Link>
+    </div>,
+    <div key="2" className=" w-full h-full pr-2 font-Bungee">
+        <div className="rounded-lg border-4 border-black shadow-md bg-white">
+            <img
+                className="w-full h-auto border-b-4 border-black"
+                src="/bestseller.jpg"
+                alt="Slide 1"
+            />
+            <div className=''>
+                <Link href="/shop">
+                    <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
+                </Link>
+            </div>
         </div>
-      </div>
-      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
-        <img
-          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
-          src="/bestseller.jpg"
-          alt="Slide 3"
-        />
-        <div>
-          <Link href="/shop">
-            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
-          </Link>
+    </div>,
+    <div key="3" className=" w-full h-full pr-2 font-Bungee">
+        <div className="rounded-lg border-4 border-black shadow-md bg-white">
+            <img
+                className="w-full h-auto border-b-4 border-black"
+                src="/bestseller.jpg"
+                alt="Slide 1"
+            />
+            <div className=''>
+                <Link href="/shop">
+                    <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
+                </Link>
+            </div>
         </div>
-      </div>
-      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
-        <img
-          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
-          src="/bestseller.jpg"
-          alt="Slide 4"
-        />
-        <div>
-          <Link href="/shop">
-            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
-          </Link>
+    </div>,
+    <div key="4" className=" w-full h-full pr-2 font-Bungee">
+        <div className="rounded-lg border-4 border-black shadow-md bg-white">
+            <img
+                className="w-full h-auto border-b-4 border-black"
+                src="/bestseller.jpg"
+                alt="Slide 1"
+            />
+            <div className=''>
+                <Link href="/shop">
+                    <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
+                </Link>
+            </div>
         </div>
-      </div>
-      <div className={`${styles['rounded-lg']} ${styles['border-4']} ${styles['border-black']} ${styles['shadow-md']} ${styles['bg-white']}`}>
-        <img
-          className={`${styles['w-full']} ${styles['h-auto']} ${styles['border-b-4']} ${styles['border-black']}`}
-          src="/bestseller.jpg"
-          alt="Slide 5"
-        />
-        <div>
-          <Link href="/shop">
-            <h2 className={`${styles['p-2']} ${styles['text-center']} ${styles['text-xl']} ${styles['hover:bg-yellow-500']}`}>Köp</h2>
-          </Link>
+    </div>,
+    <div key="5" className=" w-full h-full pr-2 font-Bungee">
+        <div className="rounded-lg border-4 border-black shadow-md bg-white">
+            <img
+                className="w-full h-auto border-b-4 border-black"
+                src="/bestseller.jpg"
+                alt="Slide 1"
+            />
+            <div className=''>
+                <Link href="/shop">
+                    <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
+                </Link>
+            </div>
         </div>
-      </div>
-      {/* Lägg till fler bilder eller innehåll här */}
-    </Slider>
-  );
+    </div>,
+    <div key="6" className=" w-full h-full pr-2 font-Bungee">
+        <div className="rounded-lg border-4 border-black shadow-md bg-white">
+
+            <img
+                className="w-full h-auto border-b-4 border-black"
+                src="/bestseller.jpg"
+                alt="Slide 1"
+            />
+            <div className=''>
+                <Link href="/shop">
+                    <h2 className='p-2 text-center text-xl hover:bg-yellow-500'>Köp</h2>
+                </Link>
+            </div>
+        </div>
+    </div>,
+
+];
+
+const Carousel: React.FC = () => {
+    const [isMounted, setIsMounted] = useState(false);
+    const carouselRef = useRef<AliceCarousel>(null);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    const responsive = {
+        0: { items: 1 },
+        568: { items: 2 },
+        1024: { items: 3 },
+        1224: { items: 5 },
+    };
+
+    if (!isMounted) {
+        return null;
+    }
+
+    return (
+        <div className="relative">
+            <AliceCarousel
+                items={items}
+                autoPlay={true}
+                autoPlayInterval={6000}
+                infinite={true}
+                responsive={responsive}
+                disableButtonsControls={true}
+                disableDotsControls={true}
+                ref={carouselRef}
+                mouseTracking={true}
+            />
+            <div className=" bottom-4 left-0 w-full flex items-center gap-2 mt-2">
+                <button
+                    className=" p-2 text-black px-4 rounded-md shadow-md focus:outline-none  border-black border-2 bg-custom-yellow hover:bg-white"
+                    onClick={() => carouselRef.current?.slidePrev()}
+                >
+                    <ArrowBackIosIcon />
+                </button>
+                <button
+                    className=" p-2 text-black px-4 rounded-md shadow-md focus:outline-none  border-black border-2 bg-custom-yellow hover:bg-white"
+                    onClick={() => carouselRef.current?.slideNext()}
+                >
+                    <ArrowForwardIosIcon />
+                </button>
+            </div>
+        </div>
+    );
 };
 
 export default Carousel;
